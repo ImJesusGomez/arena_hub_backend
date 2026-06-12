@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{subject}}</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family: Arial, sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4; padding: 40px 0;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0"
+                   style="background-color:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+
+                <!-- Header -->
+                <tr>
+                    <td style="background-color:#1a56db; padding:32px 40px; text-align:center;">
+                        <h1 style="color:#ffffff; margin:0; font-size:22px; font-weight:600;">{{appName}}</h1>
+                    </td>
+                </tr>
+
+                <!-- Body -->
+                <tr>
+                    <td style="padding:40px; color:#374151; font-size:15px; line-height:1.7;">
+                        <p style="margin:0 0 16px;">Hola,</p>
+                        <p style="margin:0 0 24px;">{{bodyText}}</p>
+
+                        <!-- CTA Button (opcional) -->
+                        {{#if callToActionUrl}}
+                        <div style="text-align:center; margin:32px 0;">
+                            <a href="{{callToActionUrl}}"
+                               style="background-color:#1a56db; color:#ffffff; padding:12px 28px;
+                          border-radius:6px; text-decoration:none; font-weight:600;
+                          font-size:14px; display:inline-block;">
+                                {{callToActionLabel}}
+                            </a>
+                        </div>
+                        {{/if}}
+
+                        <p style="margin:24px 0 0; color:#6b7280; font-size:13px;">
+                            Si no solicitaste esto, puedes ignorar este mensaje.
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td style="background-color:#f9fafb; padding:20px 40px; text-align:center;
+                        border-top:1px solid #e5e7eb; color:#9ca3af; font-size:12px;">
+                        © 2026 {{appName}}. Todos los derechos reservados.
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
