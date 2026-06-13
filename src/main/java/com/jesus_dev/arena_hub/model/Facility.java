@@ -40,11 +40,14 @@ public class Facility {
     @OneToMany(mappedBy = "facility", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<FacilitySchedule> facilitySchedules = new HashSet<>();
 
+    @OneToMany(mappedBy = "facility", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Reservation> reservations = new ArrayList<>();
+
     // Constructor
     public Facility() {
     }
 
-    public Facility(UUID id, String name, FacilitySpaceType spaceType, String description, Integer maxCapacity, String locationDetails, Integer minReservationTime, Float hourlyRate, Boolean available, Set<FacilitySchedule> facilitySchedules) {
+    public Facility(UUID id, String name, FacilitySpaceType spaceType, String description, Integer maxCapacity, String locationDetails, Integer minReservationTime, Float hourlyRate, Boolean available, Set<FacilitySchedule> facilitySchedules, List<Reservation> reservations) {
         this.id = id;
         this.name = name;
         this.spaceType = spaceType;
@@ -55,6 +58,7 @@ public class Facility {
         this.hourlyRate = hourlyRate;
         this.available = available;
         this.facilitySchedules = facilitySchedules;
+        this.reservations = reservations;
     }
 
     // Getters & Setters
@@ -136,5 +140,17 @@ public class Facility {
 
     public void setFacilitySchedules(Set<FacilitySchedule> facilitySchedules) {
         this.facilitySchedules = facilitySchedules;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
