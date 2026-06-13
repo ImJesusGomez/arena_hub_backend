@@ -2,6 +2,7 @@ package com.jesus_dev.arena_hub.mapper;
 
 import com.jesus_dev.arena_hub.dto.request.FacilityCreateRequestDTO;
 import com.jesus_dev.arena_hub.dto.response.FacilityResponseDTO;
+import com.jesus_dev.arena_hub.dto.response.FacilitySummaryResponseDTO;
 import com.jesus_dev.arena_hub.model.Facility;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -19,6 +20,8 @@ public interface FacilityMapper {
 
     @Mapping(source = "available", target = "available")
     FacilityResponseDTO toFacilityResponseDTO(Facility facility);
+
+    FacilitySummaryResponseDTO toFacilitySummaryResponseDTO(Facility facility);
 
     @Named("trim")
     default String strip(String value) {

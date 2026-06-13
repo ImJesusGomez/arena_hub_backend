@@ -1,6 +1,7 @@
 package com.jesus_dev.arena_hub.mapper;
 
 import com.jesus_dev.arena_hub.dto.response.UserResponseDTO;
+import com.jesus_dev.arena_hub.dto.response.UserSummaryResponseDTO;
 import com.jesus_dev.arena_hub.model.User;
 import com.jesus_dev.arena_hub.security.dto.request.RegisterRequestDTO;
 import org.mapstruct.Mapper;
@@ -15,4 +16,5 @@ public interface UserMapper {
     User registerDtoToUser(RegisterRequestDTO dto);
 
     UserResponseDTO toUserResponseDTO(User user);
+    UserSummaryResponseDTO toUserSummaryResponseDTO(User user);
 }
