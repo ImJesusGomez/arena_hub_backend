@@ -2,9 +2,7 @@ package com.jesus_dev.arena_hub.model;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity() @Table(name = "users")
 public class User {
@@ -34,17 +32,21 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
+    @OneToMany(mappedBy = "user")
+    private List<Reservation> reservations = new ArrayList<>();
+
     // Constructors
     public User() {
     }
 
-    public User(UUID id, String firstName, String lastName, String email, String password, Set<Role> roles) {
+    public User(UUID id, String firstName, String lastName, String email, String password, Set<Role> roles, List<Reservation> reservations) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.reservations = reservations;
     }
 
     // Getters & Setters
@@ -94,5 +96,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
 }
