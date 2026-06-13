@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -18,10 +19,10 @@ public class FacilitySchedule {
     private DayOfWeek day;
 
     @Column(name = "start_time", nullable = false)
-    private LocalDateTime startTime;
+    private LocalTime startTime;
 
     @Column(name = "end_time", nullable = false)
-    private LocalDateTime endTime;
+    private LocalTime endTime;
 
     @Column(name = "available", nullable = false)
     private boolean available = true;
@@ -34,7 +35,7 @@ public class FacilitySchedule {
     // Constructor
     public FacilitySchedule() {}
 
-    public FacilitySchedule(UUID id, DayOfWeek day, LocalDateTime startTime, LocalDateTime endTime, boolean available, Facility facility) {
+    public FacilitySchedule(UUID id, DayOfWeek day, LocalTime startTime, LocalTime endTime, boolean available, Facility facility) {
         this.id = id;
         this.day = day;
         this.startTime = startTime;
@@ -60,19 +61,19 @@ public class FacilitySchedule {
         this.day = day;
     }
 
-    public LocalDateTime getStartTime() {
+    public LocalTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(LocalTime startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public LocalTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
